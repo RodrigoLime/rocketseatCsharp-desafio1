@@ -6,11 +6,13 @@ class Program
 {
     static void Main(string[] args)
     {
-        while (true)
+        var ex = "";
+
+        while (ex != "exit") //Loop para nao precisar rodar o projeto novamente para cada ex
         {
 
-            Console.WriteLine("\n\nQual exercício deseja testar? ");
-            var ex = Console.ReadLine();
+            Console.WriteLine("\n\nQual exercício deseja testar? (Digite 'exit' para fechar o programa)");
+            ex = Console.ReadLine();
 
             if (ex != null)
             {
@@ -42,13 +44,18 @@ class Program
 
                     case "5":
                         {
-                            Exercicios.Ex5();
+                            Console.WriteLine(Exercicios.Ex5()); //Printa True se a placa for valida, printa False se nao
                         }
                         break;
 
                     case "6":
                         {
                             Exercicios.Ex6();
+                        }
+                        break;
+                    case "exit":
+                        {
+                            Console.WriteLine("Programa fechado");
                         }
                         break;
 
@@ -64,8 +71,9 @@ class Program
             else
             {
                 Console.WriteLine("Por favor digite um exercício válido");
-            }
+            }     
 
         }
+
     }
 }
